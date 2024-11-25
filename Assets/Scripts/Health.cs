@@ -14,7 +14,7 @@ public class Health : MonoBehaviour
         currentHealth = maxHealth;
         UpdateHealthBar();
     }
-
+   
     void UpdateHealthBar()
     {
         healthbarFill.fillAmount = currentHealth / maxHealth;
