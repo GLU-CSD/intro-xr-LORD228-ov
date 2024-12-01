@@ -22,6 +22,10 @@ public class Health : MonoBehaviour
     public void TakeDamage(float amount)
     {
         currentHealth -= amount;
+        if (currentHealth <= 0f)
+        {
+            Die();
+        }
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
         UpdateHealthBar();
     }
@@ -31,5 +35,9 @@ public class Health : MonoBehaviour
         currentHealth += amount;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
         UpdateHealthBar();
+    }
+    private void Die()
+    {
+        Destroy(gameObject); 
     }
 }
